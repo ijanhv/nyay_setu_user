@@ -20,7 +20,7 @@ const CaseDetailsPage = () => {
   const { caseId } = router.query
   const token = caseId?.toString().split('-')[0]
 
-  const { contract: caseCollection } = useContract(process.env.NEXT_PUBLIC_CASES_CONTRACT_ADDRESS)
+  const { contract: caseCollection } = useContract("0xef26fB5eC61c546d2A6e05662FeB696ea3a01171")
   const { data: nft, isLoading, error } = useNFT(caseCollection, token)
   // @ts-ignore
   const caseDetails = nft?.metadata?.properties
